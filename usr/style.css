@@ -11,6 +11,9 @@ h1 {
   width: 100%;
   text-align: center;
 }
+h1 div {
+  display: inline;
+}
 section {
   color: #444;
   padding: 20px;

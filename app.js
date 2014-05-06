@@ -170,5 +170,5 @@ app.post('/upload', function(req, res) {
   }, 60000, usernumber);
 }); //post
 
-app.listen(1338, '127.0.0.1');
+app.listen(process.env.PORT || 5000)
 console.log("Open Success");

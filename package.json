@@ -1,19 +1,30 @@
 {
   "name": "SYH-Gen",
   "version": "0.0.0",
-  "description": "Generate your own Shake-Your-Head optical illusion(Pikachu illusion)",
-  "main": "web.js",
+  "description": "Generate your own Shake-Your-Head optical illusion(a.k.a Pikachu illusion)!",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "~1.0.1",
+    "express-session": "~1.0.4",
+    "formidable": "~1.0.14",
+    "fs-extra": "~0.8.1",
+    "gm": "~1.14.2",
+    "express": "~4.0.0",
+    "imagemagick": "~0.1.3",
+    "sys": "~0.0.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/seosan/syh-gen"
+    "url": "git://github.com/seosan/SYH-Gen.git"
   },
   "author": "choijiwon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/seosan/syh-gen/issues"
+    "url": "https://github.com/seosan/SYH-Gen/issues"
   },
-  "homepage": "https://github.com/seosan/syh-gen"
+  "homepage": "https://github.com/seosan/SYH-Gen"
 }

@@ -131,6 +131,11 @@ app.post('/upload', function(req, res) {
       __dirname + "/lines.png",
       new_location + "/pikapika.jpg"
     ];
+    var args3 = [
+      'composite', '-gravity', 'center',
+      __dirname + "/linessmall.png",
+      new_location + "/pikapika.jpg"
+    ];
 
     fs.copy(temp_path, new_location + file_name, function(err) {
       // image processing with GraphicsMagick
@@ -142,7 +147,7 @@ app.post('/upload', function(req, res) {
             .colorize(95,95,95)
             .write(new_location + "pikapika.jpg", function(err) {
                 // image processing 2
-                outputFile.command(args2)
+                outputFile.command((size.width<=800 && size.height<=800)?args3:args2)
                 .write(new_location + "pikapika.jpg", function(err) {
                   if(err) console.log(err);
                   res.redirect('/result');

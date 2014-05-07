@@ -39,9 +39,9 @@ fs.readdir( '/resimg', function( err, files ) {
 */
 
 app.get('/', function(req, res) {
-  var acptLang = req.headers["accept-language"].toLowerCase();
+  var acptLang = req.headers["accept-language"].toLowerCase().split(",")[0];
   console.log(acptLang);
-  if( acptLang.indexOf("ko") != null ) {
+  if( acptLang.indexOf("ko") > -1 ) {
       res.render('index_ko.jade');
   } else {
     res.render('index_en.jade');
@@ -73,9 +73,9 @@ app.get('/style', function(req, res) {
 });
 
 app.get('/result', function(req, res) {
-  var acptLang = req.headers["accept-language"].toLowerCase();
+  var acptLang = req.headers["accept-language"].toLowerCase().split(",")[0];
   console.log(acptLang);
-  if( acptLang.indexOf("ko") != null ) {
+  if( acptLang.indexOf("ko") > -1 ) {
       res.render('result_ko.jade');
   } else {
     res.render('result_en.jade');
@@ -85,9 +85,9 @@ app.get('/result', function(req, res) {
 app.get('/download', function(req, res) {
   res.download('resimg/' + req.cookies.usrnum + '/pikapika.jpg', function(err) {
     if(err) {
-      var acptLang = req.headers["accept-language"].toLowerCase();
+      var acptLang = req.headers["accept-language"].toLowerCase().split(",")[0];
       console.log(acptLang);
-      if( acptLang.indexOf("ko") != null ) {
+      if( acptLang.indexOf("ko") > -1 ) {
         res.render('error_ko.jade', {msg: 1});
       }
       else res.render('error_en.jade', {msg: 1});
@@ -155,9 +155,9 @@ app.post('/upload', function(req, res) {
                 }); //write 2
             }); //write 1
         } else {
-          var acptLang = req.headers["accept-language"].toLowerCase();
-          console.log(acptLang);
-          if( acptLang.indexOf("ko") != null ) {
+            var acptLang = req.headers["accept-language"].toLowerCase().split(",")[0];
+            console.log(acptLang);
+            if( acptLang.indexOf("ko") > -1 ) {
             res.render("error_ko.jade", {msg: 2});
           } else {
             res.render('error_en.jade', {msg: 2});

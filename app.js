@@ -54,6 +54,9 @@ app.get('/pika', function(req, res) {
 app.get('/pika2', function(req, res) {
   res.sendfile(__dirname + '/usr/img/pika2.jpeg');
 });
+app.get('/syh', function(req, res) {
+  res.sendfile(__dirname + '/usr/img/syh.jpg');
+});
 
 app.get('/style', function(req, res) {
   fs.readFile(__dirname + '/usr/style.less', function(err,styles) {

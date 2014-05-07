@@ -144,7 +144,7 @@ app.post('/upload', function(req, res) {
         if(err) console.log(err);
         if(size.width <= 2000 && size.height <= 2000) {
             inputFile = inputFile.fill('white')
-            .colorize(95,95,95)
+            .colorize(93,93,93)
             .write(new_location + "pikapika.jpg", function(err) {
                 // image processing 2
                 outputFile.command((size.width<=800 && size.height<=800)?args3:args2)
